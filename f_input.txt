@@ -1,0 +1,13 @@
+start picture A
+rectangle 200 300 40 25
+myShape 30 40 70 50 80 90
+myShape 50 30 40 50 10 50
+draw picture A green 15 60
+dance picture A 50 30
+erase
+start picture B
+circle 50 100 20
+coloredrect 40 10 20 40 green
+rectangle 80 200 20 50 
+draw picture B blue 20 55
+end picture

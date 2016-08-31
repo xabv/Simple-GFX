@@ -19,7 +19,7 @@ coloredrect <x> <y> <width> <height>
 myShape <x> <y> <w> <h> <arcW> <arcH>
 ```
 
-To build: 
+####To build: 
 ```
 git clone https://github.com/xabv/simple-gfx.git
 cd simple-gfx

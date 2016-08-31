@@ -1,3 +1,4 @@
+import java.lang.reflect.Field;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.BufferedReader;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 public class Main {
 
 	public static int x, y, w, h, arcW, arcH, size, winSize = 600;
+	public static Field field;
 	public static Color getColor;
 	public static String cmd, color, canvas;
 	public static String[] tokens;
@@ -67,7 +69,13 @@ public class Main {
 				color = tokens[3];
 				x = Integer.parseInt(tokens[4]);
 				y = Integer.parseInt(tokens[5]);
-				getColor = Color.getColor(color);
+				try{
+					field = Class.forName("java.awt.Color").getField(color.toLowerCase());
+					getColor = (Color)field.get(null);
+				}
+				catch(Exception e){
+					color = null;
+				}
 				if(getColor == null)
 					getColor = findColor(color);
 				if(picList.contains(picture)){
@@ -145,7 +153,13 @@ public class Main {
 			w = Integer.parseInt(tokens[3]);
 			h = Integer.parseInt(tokens[4]);
 			color = tokens[5];
-			getColor = Color.getColor(color);
+			try{
+				field = Class.forName("java.awt.color").getField(color.toLowerCase());
+				getColor = (Color) field.get(null);
+			}
+			catch(Exception e){
+				color = null;
+			}
 			if(getColor == null)
 				getColor = findColor(color);
 			ColoredRectangle coloredRect = new ColoredRectangle("coloredrect",

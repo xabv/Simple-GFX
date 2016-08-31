@@ -12,14 +12,12 @@ erase
 end picture
 ```
 ####Notation for `<shape> [params...]`:
----
 ```
 circle <x> <y> <size>
 rectangle <x> <y> <width> <height>
 coloredrect <x> <y> <width> <height>
 myShape <x> <y> <w> <h> <arcW> <arcH>
 ```
----
 
 To build: 
 ```

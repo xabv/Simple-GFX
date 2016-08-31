@@ -14,7 +14,7 @@ public class Main {
 	public static int x, y, w, h, arcW, arcH, size, winSize = 600;
 	public static Field field;
 	public static Color getColor;
-	public static String cmd, color, canvas;
+	public static String cmd, canvas, color;
 	public static String[] tokens;
 	public static ArrayList<Picture<Shape>> picList = new ArrayList<Picture<Shape>>();
 	public static ArrayList<String> okShapes;
@@ -74,7 +74,7 @@ public class Main {
 					getColor = (Color)field.get(null);
 				}
 				catch(Exception e){
-					color = null;
+					getColor = null;
 				}
 				if(getColor == null)
 					getColor = findColor(color);
@@ -126,7 +126,7 @@ public class Main {
 	}
 
 	public static void addShapes(){
-		
+
 		if(cmd.startsWith("circle")){
 			tokens = cmd.split(" ");
 			x = Integer.parseInt(tokens[1]);
@@ -154,11 +154,11 @@ public class Main {
 			h = Integer.parseInt(tokens[4]);
 			color = tokens[5];
 			try{
-				field = Class.forName("java.awt.color").getField(color.toLowerCase());
-				getColor = (Color) field.get(null);
+				field = Class.forName("java.awt.Color").getField(color.toLowerCase());
+				getColor = (Color)field.get(null);
 			}
 			catch(Exception e){
-				color = null;
+				getColor = null;
 			}
 			if(getColor == null)
 				getColor = findColor(color);

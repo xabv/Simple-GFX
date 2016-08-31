@@ -24,10 +24,9 @@ public class Picture<S extends Shape> {
 	public void draw(Graphics gfx, Color color, int offsetX, int offsetY) throws InterruptedException {
 		Iterator<S> shapeIter;
 		Shape shape;
-		gfx.setColor(color);
 		shapeIter = shapeList.iterator();
-		
 		while(shapeIter.hasNext() ){
+			gfx.setColor(color);
 			shape = shapeIter.next();
 			x = shape.getX();
 			y = shape.getY();
@@ -66,7 +65,7 @@ public class Picture<S extends Shape> {
 
 	public void clear(Graphics g) {
 			g.setColor(Color.white);
-			g.fillRect(0, 0, Homework1.winSize, Homework1.winSize);
+			g.fillRect(0, 0, Main.winSize, Main.winSize);
 	}
 
 }

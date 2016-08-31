@@ -1,5 +1,3 @@
-
-/* Skeleton code for Homework 1, CS3100, CSU Stanislaus, Fall 2014 */
 import java.awt.*;
 
 public abstract class Shape {

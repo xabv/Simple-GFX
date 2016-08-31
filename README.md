@@ -1,5 +1,4 @@
 ###Read input from a text file to display primitive graphics.
-
 ####Input text file guide:
 ```
 start picture <char>
